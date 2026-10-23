@@ -1,0 +1,25 @@
+# Dependencies live in requirements.txt / requirements-dev.txt.
+# This file only holds tool configuration.
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = ["migrations/versions"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "ASYNC", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]  # cyrillic in user-facing strings is intended
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["taskiq.TaskiqDepends"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["migrations/"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

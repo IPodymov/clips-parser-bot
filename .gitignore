@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Env & secrets
+.env
+cookies.txt
+
+# Runtime
+downloads/*
+!downloads/.gitkeep
+*.log
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
