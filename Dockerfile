@@ -1,5 +1,5 @@
 # yt-dlp needs a JS runtime to solve YouTube challenges
-FROM denoland/deno:bin-2.9.6 AS deno
+FROM denoland/deno:bin-2.9.8 AS deno
 
 FROM python:3.12-slim
 
