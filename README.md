@@ -99,3 +99,7 @@ Dependabot раз в неделю открывает PR с обновления�
 
 - YouTube может отвечать «This video is unavailable» для запросов с IP дата-центров и некоторых сетей. Помогают `PROXY_URL` (резидентный прокси) и/или `YTDLP_COOKIES_FILE`.
 - Instagram и часть роликов VK/Vimeo требуют cookies (`YTDLP_COOKIES_FILE`, формат Netscape). Файл нужно смонтировать в контейнер `worker` и указать путь внутри контейнера.
+
+## Участие и лицензия
+
+PR приветствуются — см. [CONTRIBUTING.md](CONTRIBUTING.md). Код распространяется под [лицензией MIT](LICENSE).
