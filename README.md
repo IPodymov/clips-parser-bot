@@ -56,6 +56,21 @@ make migrate                       # alembic upgrade head
 
 Зависимости: `requirements.txt` (runtime, ставится в Docker-образ) и `requirements-dev.txt` (+ линтеры и тесты). Версии зафиксированы; при обновлении пакета обновите пин вручную.
 
+## Ветки и CI/CD
+
+- `dev` — основная ветка разработки, PR открываются в неё.
+- `main` — стабильная ветка, обновляется только через PR из `dev`.
+- Релиз — тег `vX.Y.Z` на `main`.
+
+GitHub Actions:
+
+| Workflow                | Когда                         | Что делает                                                        |
+|-------------------------|-------------------------------|-------------------------------------------------------------------|
+| `CI`                    | push и PR в `main`/`dev`      | ruff, mypy, pytest; `alembic check` на Postgres; сборка образа    |
+| `Publish image`         | push в `main`/`dev`, теги `v*` | образ в `ghcr.io/ipodymov/clips-parser-bot` (`:dev`, `:latest`, `:X.Y.Z`) |
+
+Dependabot раз в неделю открывает PR с обновлениями зависимостей в `dev`.
+
 ## Команды Makefile
 
 | Команда                  | Что делает                                        |
