@@ -1,0 +1,51 @@
+name: Баг
+description: Что-то работает не так, как ожидалось
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за репорт! Уязвимости сюда не пишите — см. [SECURITY.md](https://github.com/IPodymov/clips-parser-bot/blob/dev/SECURITY.md).
+        **Не вставляйте** токены, cookies и содержимое `.env`.
+  - type: textarea
+    id: what
+    attributes:
+      label: Что случилось
+      description: Что вы сделали, что ожидали и что получили.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка на видео
+      description: Если баг связан с конкретной ссылкой. Платформа (YouTube, TikTok, …) тоже подойдёт.
+  - type: textarea
+    id: repro
+    attributes:
+      label: Как воспроизвести
+      placeholder: |
+        1. Отправить боту ссылку ...
+        2. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: run
+    attributes:
+      label: Как запущен бот
+      options:
+        - Docker Compose (make up)
+        - С хоста (bot/worker локально)
+        - Другое
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия
+      description: Коммит или тег образа (`git rev-parse --short HEAD`, `:dev`, `:1.2.3`).
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи
+      description: Вывод `make logs` или ошибка из консоли. Уберите токены и личные данные.
+      render: shell

@@ -1,0 +1,28 @@
+name: Предложение
+description: Новая функция или улучшение
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу это решает
+      description: Опишите проблему или сценарий, а не только решение.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативы
+      description: Какие ещё варианты рассматривали.
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Участие
+      options:
+        - label: Готов(а) сделать PR
