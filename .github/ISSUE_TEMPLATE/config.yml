@@ -2,4 +2,4 @@ blank_issues_enabled: false
 contact_links:
   - name: Сообщить об уязвимости
     url: https://github.com/IPodymov/clips-parser-bot/security/advisories/new
-    about: Приватно, не в публичном issue — см. SECURITY.md.
+    about: Приватно, не в публичном issue — см. docs/SECURITY.md.
